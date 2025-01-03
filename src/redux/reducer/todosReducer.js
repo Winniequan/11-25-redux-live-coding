@@ -25,6 +25,10 @@ export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     case "TODO_ADDED":
       return [...state, action.payload];
+    case "DELETE_TODO":
+      return [...state,
+        
+      ]
 
     default:
       return state;
@@ -34,3 +38,9 @@ export default function todosReducer(state = initialState, action) {
 export const addTodo = (payload) => {
   return { type: "TODO_ADDED", payload };
 };
+
+export const deleteTodo =(id)=>{
+  return{ type: "DELETE_TODO",
+    payload: id
+  }
+}
